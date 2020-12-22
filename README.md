@@ -15,8 +15,8 @@ This repository is an execution of the [white paper](https://web.northeastern.ed
 ## Table of content
 
 - [Data collection Process](#data-collection-process)
-    -[Hardware](#hardware)
-    -[Setup](#Exraction-setup)
+    - [Hardware](#hardware)
+    - [Setup](#Exraction-setup)
 - [Installation](#Installation)
 - [Usage](#Usage)
     - [Execution](#Execution)
