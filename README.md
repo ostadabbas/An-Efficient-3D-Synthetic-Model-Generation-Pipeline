@@ -78,30 +78,36 @@ folder
 
 
 
+
+
+## usage
+
+## Citation 
+If you found our work useful in your research, please consider citing our paper:
+
+```
+@article{vya2019recognition,
+  title={Recognition of Atypical Behavior in Autism Diagnosis from Video using Pose Estimation Over Time},
+  author={Kathan Vyas, Rui Ma, Behnaz Rezaei, Shuangjun Liu, Thomas Ploetz, Ronald Oberleitner and Sarah Ostadabbas},
+  journal={IEEE International Workshop on Machine Learning for Signal Processing (MLSP’19), October 13-16, 2019, Pittsburgh, PA, USA.},
+  year={2019}
+}
+```
+
+
+## License 
+* This code is for non-commertial purpose only. For other uses please contact ACLab of NEU. 
+* No maintainence survice 
+
+## Acknowledgements ###
+
+The whole pipeline code is influenced using the code from [open3D] (http://www.open3d.org/) library. Also the research papers used for the construction are provided in reference section.
+
+
 ## Contact: 
 [Kathan Vyas](vyas.k@northeastern.edu)
 
 [Sarah Ostadabbas](ostadabbas@ece.neu.edu)
 
-## Installation
-
-This document is for the latest Aimeos TYPO3 **20.10 release and later**.
-
-- LTS release: 20.10 (TYPO3 9/10 LTS)
-- Old LTS release: 19.10 (TYPO3 7/8/9 LTS)
 
 
-## usage
-
-## License
-
-The Aimeos TYPO3 extension is licensed under the terms of the GPL Open Source
-license and is available for free.
-
-## Links
-
-* [Web site](https://aimeos.org/integrations/typo3-shop-extension/)
-* [Documentation](https://aimeos.org/docs/TYPO3)
-* [Forum](https://aimeos.org/help/typo3-extension-f16/)
-* [Issue tracker](https://github.com/aimeos/aimeos-typo3/issues)
-* [Source code](https://github.com/aimeos/aimeos-typo3)
