@@ -31,7 +31,7 @@ For the purpose of the project, we need to collect data for poinclouds or scans 
 
 ### Hardware
 
-In our experiments while creating the pipeline, we used [Intel Real Sense D435i](https://www.intelrealsense.com/) which is a depth sensing camera from Intel. The Intel RealSense™ D4xx depth cameras can stream live depth (i.e. ranging data) and color data at up to 90 frames per second, and all the processing to generate the depth data is done on-board by the embedded D4 application-specific integrated circuits (ASIC). All the intel real sense cameras can be connected to the machine using an USB-C type cable and could be operated using dedicated [Real Sense SDK] (https://www.intelrealsense.com/sdk-2/). The sdk is only available for windows 10. The sdk can be used to capture a point cloud or record a sequence of point cloud with a file with extension ".bag". 
+In our experiments while creating the pipeline, we used [Intel Real Sense D435i](https://www.intelrealsense.com/) which is a depth sensing camera from Intel. The Intel RealSense™ D4xx depth cameras can stream live depth (i.e. ranging data) and color data at up to 90 frames per second, and all the processing to generate the depth data is done on-board by the embedded D4 application-specific integrated circuits (ASIC). All the intel real sense cameras can be connected to the machine using an USB-C type cable and could be operated using dedicated [Real Sense SDK](https://www.intelrealsense.com/sdk-2/). The sdk is only available for windows 10. The sdk can be used to capture a point cloud or record a sequence of point cloud with a file with extension ".bag". 
 
 ### Exraction-setup
 
@@ -45,27 +45,25 @@ There are two ways the data collection can be done.
 
 2. Record a "BAG" file which is nothing but a collection of continuously recorded point clouds. A "BAG" file can be recorded using the real sense sdk viewer app. You can record the file within a set frames per second. This FPS is important because later on when you extract frames from the "BAG" file, the number of frames extracted will be equal to fps*seconds_of_recorded_file . Once we have a "BAG" file, you can use the intel real sense api module [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert). The rs-convert is a console app for converting bag files to various formats (currently supported: PNG, RAW, CSV, PLY, BIN). In our case we can convert the frames to ply or pcd. The code to extract a  10 second "file.bag" which was recorded on 30fps will produce 300 frames using following code:
 
-    ```
-    
-        cd path_to_ Intel RealSense SDK 2.0/tools
 
-        .\rs-convert.exe -l path_of_output_folder -i file.bag
-
-    ```
+```
+cd path_to_ Intel RealSense SDK 2.0/tools
+.\rs-convert.exe -l path_of_output_folder -i file.bag
+```
 
 Please save the point clouds starting from 0 to n point clouds. the structure of teh saved point clouds should be saved as:
 
 
-    ```
-        folder
-            -0.pcd
-            -1.pcd
-                .
-                .
-                .
-                .
-            -n.pcd
-    ```
+```
+folder
+    -0.pcd
+    -1.pcd
+     .
+     .
+     .
+     .
+    -n.pcd
+```
 
 ## Installation
 
