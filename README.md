@@ -5,7 +5,9 @@
 version 1.0.0 (Dec 2020)
 
 
-This repository is an execution of the [white paper](https://web.northeastern.edu/ostadabbas/). This was a part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed with help and guidance within [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/).The given pipeline uses pointclouds scanned using any depth based camera (recomended: Intel Real Sense D435i) and implements two different variants of Iterative Closes Point based on availability of color infromation for the point clouds.  
+This repository is an execution of the [white paper](https://web.northeastern.edu/ostadabbas/). This was a part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed with help and guidance within [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/).The given pipeline uses pointclouds scanned using any depth based camera (recomended: Intel Real Sense D435i) and implements two different variants of Iterative Closes Point based on availability of color infromation for the point clouds. The whole process is displayed in figure below.
+
+![image](images/mesh_process.JPG)
 
 
 ## Table of content
