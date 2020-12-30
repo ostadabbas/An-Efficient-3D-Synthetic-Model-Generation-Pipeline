@@ -43,7 +43,7 @@ In our experiments while creating the pipeline, we used [Intel RealSense D435i](
 
 The subject that is being scanned is to be kept in front of camera. You can use a rotating table on which you can put the subject and rotate it. You can then use the RealSense SDK-viewer API which is as shown in figure here.
 
-![image](images/realsensesdk.JPG)
+![image](images/realsensesdk.jpg)
 
 
 There are two ways the data collection can be done. 
