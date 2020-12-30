@@ -4,7 +4,7 @@
 This repository is part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
 
 
-The given pipeline can use point clouds scanned using any depth camera (recomended: Intel Real Sense D435i) and implements two different variants of Iterative Closes Point (ICP) based on availability of color infromation for the point clouds. The whole process is displayed in figure below.
+The given pipeline can use point clouds scanned using any depth camera (recomended: Intel RealSense D435i) and implements two different variants of Iterative Closes Point (ICP) based on availability of color infromation for the point clouds. The whole process is displayed in figure below.
 
 ![image](images/mesh_process.JPG)
 
@@ -41,9 +41,10 @@ In our experiments while creating the pipeline, we used [Intel RealSense D435i](
 
 ### Exraction-setup
 
-The human subject that is being scanned is to be kept in front of camera. You can use a rotating table on which you can put the subject and rotate it. You can then use the real sense SDK-viewer API which is as shown in figure here.
+The subject that is being scanned is to be kept in front of camera. You can use a rotating table on which you can put the subject and rotate it. You can then use the RealSense SDK-viewer API which is as shown in figure here.
 
-**Image**
+![image](images/realsensesdk.JPG)
+
 
 There are two ways the data collection can be done. 
 
@@ -73,7 +74,7 @@ folder
 
 ## Installation
 
-The algorithm is purely working in python 3.6 or higher. The requirement of the algorithm needs some libraries which can be installed using the requirement.txt file. 
+The algorithm is purely working in python 3.6 or higher. The requirement of the algorithm needs some libraries which can be installed using the ''requirement.txt'' file. 
 Please make an enviornment using this requirement file and your are ready to go. If you have issues with numpy and open3D, please install numpy firls either using whl or source 
 and then install open3D.
 
