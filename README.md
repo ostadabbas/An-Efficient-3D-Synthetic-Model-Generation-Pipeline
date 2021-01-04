@@ -112,8 +112,11 @@ def preprocess_point_cloud(pcd, voxel_size)
 The "execute_global_registration" implements the RANSAC based global registration. It uses the the calculated geometric features along with pairs of point clouds (source and target) to obtain initial allignment with a RANSAC based inler identification technique. The outpus of this function will be initial alignment for the source and target. The function "pairwise_registration" applies the general ICP algorithm using the inital alignment obtained from global_registration function. It will return the final transformation matrix (includes rotation and translation between source and target). The "main_registration" then implements pose graph to obtained a collective registration of all input point cloud to give one single registered point cloud. The "final_fun" is just a collection of these previously defined functions in one single function.
 ```
 def execute_global_registration(source_down, target_down, source_fpfh, target_fpfh, voxel_size)
+
 def pairwise_registration(source, target, source_fpfh, target_fpfh, voxel_size)
+
 def main_registration(pcds,fpfh, max_correspondence_dist_coarse,max_correspondence_dist_fine, voxel_size)
+
 def final_fun(dirtry, g)
 ```
 
