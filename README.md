@@ -4,7 +4,7 @@
 This repository is part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
 
 
-The given pipeline can use point clouds scanned using any depth camera (recomended: Intel RealSense D435i) and implements two different variants of Iterative Closes Point (ICP) based on availability of color infromation for the point clouds. The whole process is displayed in figure below.
+The given pipeline can use point clouds scanned using any depth camera (recomended: Intel RealSense D435i) and implement two different variants of Iterative Closest Point (ICP) based on availability of color information for the point clouds. The whole process is displayed in figure below.
 
 ![image](images/mesh_process.JPG)
 
@@ -101,32 +101,26 @@ The execution of each code asks for following argument:
 This section will look into parts of code responsible for operation of registration. It explains all functions used in the code 
 
 1. For General_ICP.ipynb
-```
-def preprocess_point_cloud(pcd, voxel_size):
-    #print(":: Downsample with a voxel size %.3f." % voxel_size)
-    #pcd_down = o3d.geometry.voxel_down_sample(pcd, voxel_size)
-    radius_normal = voxel_size * 2
-    #print(":: Estimate normal with search radius %.3f." % radius_normal)
-    o3d.geometry.estimate_normals(pcd,o3d.geometry.KDTreeSearchParamHybrid(radius=radius_normal, max_nn=30))
-    radius_feature = voxel_size * 5
-    #print(":: Compute FPFH feature with search radius %.3f." % radius_feature)
-    pcd_fpfh = o3d.registration.compute_fpfh_feature(pcd,o3d.geometry.KDTreeSearchParamHybrid(radius=radius_feature, max_nn=100))
-    return pcd_fpfh
-```
-These functions are responsible for import of the point clouds.
-```
-import open3d as o3d
 
-pcd = o3d.io.read_point_cloud("../point_cloud.ply")    #point cloud directory                                           #
-print(np.asarray(pcd.points))                          #print X-Y-Z coordintaes of the points
-o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to visualise the point cloud. 
+These functions are responsible for import of the point clouds. The "load_point_clouds" takes in the input directory, voxel size (one of the hyper-parameters set by user), number of point clouds in the input directory and the angles (if known). The "preprocess_point_cloud" takes in each point cloud from the input directory and calculates global geometric features "Fast Point Feature Histogram" as well as "Normals" for each point in the point cloud. More details about this could be obtained from the [paper](https://web.northeastern.edu/ostadabbas/) in subsequent sections.
 ```
-```
-import open3d as o3d
+def load_point_clouds(directory ,voxel_size ,n,g)
 
-pcd = o3d.io.read_point_cloud("../point_cloud.ply")    #point cloud directory                                           #
-print(np.asarray(pcd.points))                          #print X-Y-Z coordintaes of the points
-o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to visualise the point cloud. 
+def preprocess_point_cloud(pcd, voxel_size)   
+```
+
+The "execute_global_registration" implements the RANSAC based global registration. It uses the the calculated geometric features along with pairs of point clouds (source and target) to obtain initial allignment with a RANSAC based inler identification technique. The outpus of this function will be initial alignment for the source and target. The function "pairwise_registration" applies the general ICP algorithm using the inital alignment obtained from global_registration function. It will return the final transformation matrix (includes rotation and translation between source and target). The "main_registration" then implements pose graph to obtained a collective registration of all input point cloud to give one single registered point cloud. The "final_fun" is just a collection of these previously defined functions in one single function.
+```
+def execute_global_registration(source_down, target_down, source_fpfh, target_fpfh, voxel_size)
+def pairwise_registration(source, target, source_fpfh, target_fpfh, voxel_size)
+def main_registration(pcds,fpfh, max_correspondence_dist_coarse,max_correspondence_dist_fine, voxel_size)
+def final_fun(dirtry, g)
+```
+
+The "draw_registration_result" allows visualization of the point clouds. It can implement transformation to a point cloud. This function can be used to visualise two point clouds with a without trnsformation applied.
+
+```
+def draw_registration_result(source, target, transformation)
 ```
 
 
