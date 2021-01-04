@@ -22,6 +22,7 @@ The given pipeline can use point clouds scanned using any depth camera (recomend
 - [Installation](##Installation)
 - [Usage](##Usage)
     - [Execution](###Execution)
+    - [Code Explanation](###code) 
 - [Results](##Result)
     - [Output](###Output)
 - [Post Processing](##Post-Processing)
@@ -95,10 +96,20 @@ The execution of each code asks for following argument:
 
 3. Output Folder (not asked in this version but will be put as an argument in later version): This is where the output registered point cloud will be stored. Present version stores a final registered point cloud in same directory as input directory.
 
+### Code
+
+This section will look into parts of code responsible for operation of registration. It explains all functions used in the code 
+
+
 
 ## Result
 
+The result of the whole process is a final registered point cloid. If you have not made any changes in teh directory of the output file, the final file will be saved in teh same directory as input files. You can change the extension of the output file to either ".ply" or ".pcd" formats. The resulting point cloud can be viewed using following code:
 
+```
+```
+
+Or it can also be viewed using either online version of [meshlab] (http://www.meshlabjs.net/) or you can download [meshlab] (https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here] (http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
 
 
 
