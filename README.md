@@ -104,12 +104,17 @@ This section will look into parts of code responsible for operation of registrat
 
 ## Result
 
-The result of the whole process is a final registered point cloid. If you have not made any changes in teh directory of the output file, the final file will be saved in teh same directory as input files. You can change the extension of the output file to either ".ply" or ".pcd" formats. The resulting point cloud can be viewed using following code:
+The result of the whole process is a final registered point cloid. If you have not made any changes in teh directory of the output file, the final file will be saved in teh same directory as input files. You can change the extension of the output file to either ".ply" or ".pcd" formats. Open3D library is needed for this.The resulting point cloud can be viewed using following code:
 
 ```
+import open3d as o3d
+
+pcd = o3d.io.read_point_cloud("../point_cloud.ply")    #point cloud directory                                           #
+print(np.asarray(pcd.points))                          #print X-Y-Z coordintaes of the points
+o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to visualise the point cloud. 
 ```
 
-Or it can also be viewed using either online version of [meshlab] (http://www.meshlabjs.net/) or you can download [meshlab] (https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here] (http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
+Or it can also be viewed using either online version of [meshlab](http://www.meshlabjs.net/) or you can download [meshlab](https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here] (http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
 
 
 
