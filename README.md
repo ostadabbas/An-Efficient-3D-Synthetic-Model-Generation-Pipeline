@@ -100,6 +100,36 @@ The execution of each code asks for following argument:
 
 This section will look into parts of code responsible for operation of registration. It explains all functions used in the code 
 
+1. For General_ICP.ipynb
+```
+def preprocess_point_cloud(pcd, voxel_size):
+    #print(":: Downsample with a voxel size %.3f." % voxel_size)
+    #pcd_down = o3d.geometry.voxel_down_sample(pcd, voxel_size)
+    radius_normal = voxel_size * 2
+    #print(":: Estimate normal with search radius %.3f." % radius_normal)
+    o3d.geometry.estimate_normals(pcd,o3d.geometry.KDTreeSearchParamHybrid(radius=radius_normal, max_nn=30))
+    radius_feature = voxel_size * 5
+    #print(":: Compute FPFH feature with search radius %.3f." % radius_feature)
+    pcd_fpfh = o3d.registration.compute_fpfh_feature(pcd,o3d.geometry.KDTreeSearchParamHybrid(radius=radius_feature, max_nn=100))
+    return pcd_fpfh
+```
+These functions are responsible for import of the point clouds.
+```
+import open3d as o3d
+
+pcd = o3d.io.read_point_cloud("../point_cloud.ply")    #point cloud directory                                           #
+print(np.asarray(pcd.points))                          #print X-Y-Z coordintaes of the points
+o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to visualise the point cloud. 
+```
+```
+import open3d as o3d
+
+pcd = o3d.io.read_point_cloud("../point_cloud.ply")    #point cloud directory                                           #
+print(np.asarray(pcd.points))                          #print X-Y-Z coordintaes of the points
+o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to visualise the point cloud. 
+```
+
+
 
 
 ## Result
@@ -114,7 +144,7 @@ print(np.asarray(pcd.points))                          #print X-Y-Z coordintaes 
 o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to visualise the point cloud. 
 ```
 
-Or it can also be viewed using either online version of [meshlab](http://www.meshlabjs.net/) or you can download [meshlab](https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here] (http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
+Or it can also be viewed using either online version of [meshlab](http://www.meshlabjs.net/) or you can download [meshlab](https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here](http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
 
 
 
