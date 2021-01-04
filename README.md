@@ -141,7 +141,7 @@ print(np.asarray(pcd.points))                          #print X-Y-Z coordintaes 
 o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to visualise the point cloud. 
 ```
 
-Or it can also be viewed using either online version of [meshlab](http://www.meshlabjs.net/) or you can download [meshlab](https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here](http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
+Or it can also be viewed using either online version of [meshlab-online](http://www.meshlabjs.net/) or you can download [meshlab on local machine](https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here](http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
 
 
 
