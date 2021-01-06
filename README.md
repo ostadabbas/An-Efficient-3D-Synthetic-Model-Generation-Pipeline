@@ -149,7 +149,7 @@ Or it can also be viewed using either online version of [meshlab-online](http://
 
 ## License 
 * This code is for non-commertial purpose only. For other uses please contact ACLab of NEU. 
-* No maintainence survice 
+* No maintainence service 
 
 ## Acknowledgements ###
 
