@@ -34,7 +34,7 @@ The given pipeline can use point clouds scanned using any depth camera (recomend
 
 ## Data Collection Process
 
-For the purpose of this project, we need to collect data for point clouds or scans from a depth camera. The main algorithm accepts point clouds in either .pcd or .ply format and it can accept any number of point clouds from 2 to 5000. The numbers of point clouds is something that depends on requirement of the final registered point cloud resolution.
+For the purpose of this project, collect data for point clouds or scans from a depth camera. The main algorithm accepts point clouds in either .pcd or .ply format and it can accept any number of point clouds from 2 to 5000. The numbers of point clouds (scans) is something that depends on requirement of the final registered point cloud resolution.
 
 ### Hardware
 
@@ -160,3 +160,7 @@ The whole pipeline code is influenced using the code from [open3D](http://www.op
 
 ## References
 
+1. M. A. Fischler and R. C. Bolles, “Random sample consensus: a paradigm for model fittingwith applications to image analysis and automated cartography,”Communications of the    ACM,vol. 24, no. 6, pp. 381–395, 1981
+2. S. Rusinkiewicz and M. Levoy, “Efficient variants of the icp algorithm,” inProceedings thirdinternational conference on 3-D digital imaging and modeling.    IEEE, 2001, pp.    145–152
+3. Y. Chen and G. Medioni, “Object modelling by registration of multiple range images,”Imageand vision computing, vol. 10, no. 3, pp. 145–155, 1992
+4. J. Park, Q.-Y. Zhou, and V. Koltun, “Colored point cloud registration revisited,” inProceedingsof the IEEE International Conference on Computer Vision, 2017, pp. 143–152
