@@ -126,7 +126,13 @@ The "draw_registration_result" allows visualization of the point clouds. It can 
 def draw_registration_result(source, target, transformation)
 ```
 
+2. For Color_ICP.ipynb
 
+The only major difference here happens in function presented here below:
+```
+def main_registration(pcds,fpfh, max_correspondence_dist_coarse,max_correspondence_dist_fine, voxel_size)
+```
+Here we look at three channels in form of scales (primiarily this will be R-G-B channel) and perform scale based color ICP.
 
 
 ## Result
@@ -142,7 +148,6 @@ o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to
 ```
 
 Or it can also be viewed using either online version of [meshlab-online](http://www.meshlabjs.net/) or you can download [meshlab on local machine](https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here](http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
-
 
 
 
