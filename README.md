@@ -1,5 +1,5 @@
 
-# Synthetic Human Generation for Pose Data Augmentation
+# An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation
 
 This repository is part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
 
