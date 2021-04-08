@@ -169,3 +169,4 @@ The whole pipeline code is influenced using the code from [open3D](http://www.op
 2. S. Rusinkiewicz and M. Levoy, “Efficient variants of the icp algorithm,” inProceedings thirdinternational conference on 3-D digital imaging and modeling.    IEEE, 2001, pp.    145–152
 3. Y. Chen and G. Medioni, “Object modelling by registration of multiple range images,”Imageand vision computing, vol. 10, no. 3, pp. 145–155, 1992
 4. J. Park, Q.-Y. Zhou, and V. Koltun, “Colored point cloud registration revisited,” inProceedingsof the IEEE International Conference on Computer Vision, 2017, pp. 143–152
+5. Q.-Y. Zhou, J. Park, and V. Koltun, “Open3D: A modern library for 3D data processing,”arXiv:1801.09847, 2018
