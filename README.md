@@ -6,7 +6,7 @@ This repository is part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.e
 
 The given pipeline can use point clouds scanned using any depth camera (recomended: Intel RealSense D435i) and implement two different variants of Iterative Closest Point (ICP) based on availability of color information for the point clouds. The whole process is displayed in figure below.
 
-![image](images/mesh_process.JPG)
+![image](images/3D-SMGpipeline.JPG)
 
 ## Contact: 
 [Kathan Vyas](vyas.k@northeastern.edu)
