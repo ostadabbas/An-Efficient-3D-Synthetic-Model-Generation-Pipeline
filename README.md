@@ -1,12 +1,14 @@
 
 # An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation
 
-This repository is part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
+This repository is implementtaion of the paper "An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation" which is a part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
 
 
-The given pipeline can use point clouds scanned using any depth camera (recomended: Intel RealSense D435i) and implement two different variants of Iterative Closest Point (ICP) based on availability of color information for the point clouds. The whole process is displayed in figure below.
+The given pipeline can use scanned point clouds or pairs of RGB-Depth images using any depth camera (recomended: Intel RealSense D435i) and implement two different variants of Iterative Closest Point (ICP) based on availability of color information for the point clouds. The whole process is displayed in figure below:
 
 ![image](images/3D-SMGpipeline.png)
+
+Under the current repository, codes provided help cover the 
 
 ## Contact: 
 [Kathan Vyas](vyas.k@northeastern.edu)
