@@ -1,14 +1,14 @@
 
 # An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation
 
-This repository is implementtaion of the paper "An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation" which is a part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
+This repository is implementation of the paper "An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation" which is a part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
 
 
 The given pipeline can use scanned point clouds or pairs of RGB-Depth images using any depth camera (recomended: Intel RealSense D435i) and implement two different variants of Iterative Closest Point (ICP) based on availability of color information for the point clouds. The whole process is displayed in figure below:
 
 ![image](images/3D-SMGpipeline.png)
 
-Under the current repository, codes provided help cover the 
+Under the current repository, codes provided help cover the "Data Collection & Preparation" and "Registration & Mesh Creation" sections. 
 
 ## Contact: 
 [Kathan Vyas](vyas.k@northeastern.edu)
@@ -36,7 +36,10 @@ Under the current repository, codes provided help cover the
 
 ## Data Collection Process
 
-For the purpose of this project, collect data for point clouds or scans from a depth camera. The main algorithm accepts point clouds in either .pcd or .ply format and it can accept any number of point clouds from 2 to 5000. The numbers of point clouds (scans) is something that depends on requirement of the final registered point cloud resolution.
+For the purpose of this project, we can collect either point clouds or RGB-D scans from a depth camera. The choice of input depends upon the size and quality of depth. If the scanned point clouds are not able to capture depth well, we suggest scanning RGB-Depth images separately rather than directly scanning point clouds. [Intel RealSense D435i](https://www.intelrealsense.com/) allows both scanning RGB-D images and point clouds. 
+
+
+The main algorithm accepts point clouds in either .pcd or .ply format and it can accept any number of point clouds from 2 to 5000. The numbers of point clouds (scans) is something that depends on requirement of the final registered point cloud resolution.
 
 ### Hardware
 
