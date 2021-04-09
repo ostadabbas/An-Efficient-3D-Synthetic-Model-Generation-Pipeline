@@ -10,17 +10,12 @@ The given pipeline can use scanned point clouds or pairs of RGB-Depth images usi
 
 Under the current repository, codes provided help cover the "Data Collection & Preparation" and "Registration & Mesh Creation" sections. 
 
-## Contact: 
-[Kathan Vyas](vyas.k@northeastern.edu)
-
-[Sarah Ostadabbas](ostadabbas@ece.neu.edu)
-
 
 ## Table of content
 
 - [Data collection Process](##data-collection-process)
     - [Hardware](###hardware)
-    - [Setup](###Exraction-setup)
+    - [Extraction-Setup](###Exraction-setup)
 - [Installation](##Installation)
 - [Usage](##Usage)
     - [Execution](###Execution)
@@ -158,6 +153,12 @@ o3d.visualization.draw_geometries([pcd])               #Draw_geometries helps to
 
 Or it can also be viewed using either online version of [meshlab-online](http://www.meshlabjs.net/) or you can download [meshlab on local machine](https://www.meshlab.net/#download). For more detail on how to import a point cloud in meshlab please look at the instructions found [here](http://www.heritagedoc.pt/doc/Meshlab_Tutorial_iitd.pdf)
 
+## Post-Processing
+
+
+##Citation
+
+If you use the code or use part of it, we would appreciate if you could support us by citing our work using:
 
 
 
@@ -168,6 +169,11 @@ Or it can also be viewed using either online version of [meshlab-online](http://
 ## Acknowledgements ###
 
 The whole pipeline code is influenced using the code from [open3D](http://www.open3d.org/) library. Also the research papers used for the construction are provided in reference section.
+
+## Contact: 
+[Kathan Vyas](vyas.k@northeastern.edu)
+
+[Sarah Ostadabbas](ostadabbas@ece.neu.edu)
 
 
 
