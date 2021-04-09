@@ -36,7 +36,11 @@ Under the current repository, codes provided help cover the "Data Collection & P
 
 ## Data Collection Process
 
-For the purpose of this project, we can collect either point clouds or RGB-D scans from a depth camera. The choice of input depends upon the size and quality of depth. If the scanned point clouds are not able to capture depth well, we suggest scanning RGB-Depth images separately rather than directly scanning point clouds. [Intel RealSense D435i](https://www.intelrealsense.com/) allows both scanning RGB-D images and point clouds. 
+For the purpose of this project, We provide two ways to collect the input data:
+ 1) RGB-Depth Images
+ 2) Point clouds
+
+We can collect either from a depth camera. The choice of input depends upon the size and quality of depth. If the scanned point clouds are not able to capture depth well, we suggest scanning RGB-Depth images separately rather than directly scanning point clouds. [Intel RealSense D435i](https://www.intelrealsense.com/) allows both scanning RGB-D images and point clouds. 
 
 
 The main algorithm accepts point clouds in either .pcd or .ply format and it can accept any number of point clouds from 2 to 5000. The numbers of point clouds (scans) is something that depends on requirement of the final registered point cloud resolution.
