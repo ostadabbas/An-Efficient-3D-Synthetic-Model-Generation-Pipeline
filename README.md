@@ -35,14 +35,13 @@ For the purpose of this project, We provide two ways to collect the input data:
  1) RGB-Depth Images
  2) Point clouds
 
-We can collect either from a depth camera. The choice of input depends upon the size and quality of depth. If the scanned point clouds are not able to capture depth well, we suggest scanning RGB-Depth images separately rather than directly scanning point clouds. [Intel RealSense D435i](https://www.intelrealsense.com/) allows both scanning RGB-D images and point clouds. 
-
-
-The main algorithm accepts point clouds in either .pcd or .ply format and it can accept any number of point clouds from 2 to 5000. The numbers of point clouds (scans) is something that depends on requirement of the final registered point cloud resolution.
+We can collect these from a depth camera. The choice of input depends upon the size and quality of depth. If the scanned point clouds are not able to capture depth well enough, we suggest opting to scan RGB-Depth images separately rather than directly scanning point clouds. More on the collection is provided within [Extraction-Setup](###Exraction-setup) section. The main algorithm accepts point clouds in either .pcd or .ply format and it can accept any number of point clouds from 2 to 5000. The numbers of point clouds (scans) is something that depends on requirement of the final registered point cloud resolution.
 
 ### Hardware
 
-In our experiments while creating the pipeline, we used [Intel RealSense D435i](https://www.intelrealsense.com/) which is a depth sensing camera from Intel. The Intel RealSense™ D4xx depth cameras can stream live depth (i.e. ranging data) and color data at up to 90 frames per second, and all the processing to generate the depth data is done on-board by the embedded D4 application-specific integrated circuits (ASIC). All the Intel RealSense cameras can be connected to the machine using an USB-C type cable and could be operated using dedicated [RealSense SDK](https://www.intelrealsense.com/sdk-2/). The sdk is only available for windows 10. The sdk can be used to capture a point cloud or record a sequence of point cloud with a file with extension ".bag". 
+In our experiments while creating the pipeline, we used [Intel RealSense D435i](https://www.intelrealsense.com/) which is a depth sensing camera from Intel. The Intel RealSense™ D4xx depth cameras can stream live depth (i.e. ranging data) and color data at up to 90 frames per second, and all the processing to generate the depth data is done on-board by the embedded D4 application-specific integrated circuits (ASIC). All the Intel RealSense cameras can be connected to the machine using an USB-C type cable and could be operated using dedicated [RealSense SDK](https://www.intelrealsense.com/sdk-2/). The sdk is only available for windows 10. The SDK provides resources to collect a sequence of RGB-Depth images as well as point clouds.
+
+
 
 ### Exraction-setup
 
@@ -50,21 +49,17 @@ The subject that is being scanned is to be kept in front of camera. You can use 
 
 ![image](images/realsensesdk.jpg)
 
+We use the 'record' function on the SDK-viewer API. It records a "bag" file which is a collection of point clouds with time synchronisation.A "BAG" file is nothing but a collection of continuously recorded point clouds.  You can record the file within a set frames per second (FPS). This FPS is important because later on when you extract frames or point clouds from the "BAG" file, the number of frames extracted will be equal to fps*seconds_of_recorded_file. We can then either extract point clouds or RGB-D image sequences using Intel RealSense API module [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert). We suggest to check a few point clouds first to see the quality of depth. If it is good, move to method 1, if not move to method 2.
 
-There are two ways the data collection can be done. 
 
-1. Capture individual point clouds from various angles. You can select specific angles around the subject, for instance capture a point cloud at every 60 degrees around the subject, so a total of 6 point clouds would cover 360 degrees around the body. If you plan to capture every 45 degrees, you will be able to capture 8 point clouds and so on. Please make sure you cover the subject from sides and angles. Please save the names of point clouds starting from 0. 
-
-2. Record a "BAG" file which is nothing but a collection of continuously recorded point clouds. A "BAG" file can be recorded using the Intel RealSense SDK viewer app. You can record the file within a set frames per second (FPS). This FPS is important because later on when you extract frames from the "BAG" file, the number of frames extracted will be equal to fps*seconds_of_recorded_file . Once we have a "BAG" file, you can use the Intel RealSense API module [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert). The rs-convert is a console app for converting bag files to various formats (currently supported: PNG, RAW, CSV, PLY, BIN). In our case we can convert the frames to .ply or .pcd. The code to extract a  10 second "file.bag" which was recorded on 30fps will produce 300 frames using following code:
-
+Method 1.  Once we have a "BAG" file, you can use the  [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert). The rs-convert is a console app for converting bag files to various formats (currently supported: PNG, RAW, CSV, PLY, BIN). I the observed depth quality in point cloud is good, we can extract point clouds from the bag file. The extracted point clouds could be saved as .ply or .pcd. The code to extract a  10 second "file.bag" which was recorded on 30fps will produce 300 frames using following code:
 
 ```
 cd path_to_ Intel RealSense SDK 2.0/tools
 .\rs-convert.exe -l path_of_output_folder -i file.bag
 ```
 
-Please save the point clouds starting from 0 to n point clouds. The structure of the saved point clouds should be saved as:
-
+Here the parameter "-l" informs rs-convert to extract point clouds in .ply format. Please save the point clouds starting from 0 to n point clouds. The structure of the saved point clouds should be saved as:
 
 ```
 folder
@@ -75,7 +70,12 @@ folder
      .
      .
     -n.pcd
-```
+``` 
+2. 
+3. 
+4. Extract RGB-Depth image sequence. This is supposed to be used when the depth of the scanned point clouds is of low quality. So we suggest you can scan few point clouds and visualise it first. if the quality is not acceptable, record a sequence by clicking the record button on sdk. This will record 
+
+2. 
 
 ## Installation
 
