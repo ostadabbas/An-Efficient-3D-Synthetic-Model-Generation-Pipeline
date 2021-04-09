@@ -52,7 +52,7 @@ The subject that is being scanned is to be kept in front of camera. You can use 
 We use the 'record' function on the SDK-viewer API. It records a "bag" file which is a collection of point clouds with time synchronisation.A "BAG" file is nothing but a collection of continuously recorded point clouds.  You can record the file within a set frames per second (FPS). This FPS is important because later on when you extract frames or point clouds from the "BAG" file, the number of frames extracted will be equal to fps*seconds_of_recorded_file. We can then either extract point clouds or RGB-D image sequences using Intel RealSense API module [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert). We suggest to check a few point clouds first to see the quality of depth. If it is good, move to method 1, if not move to method 2.
 
 
-Method 1.  Once we have a "BAG" file, you can use the  [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert). The rs-convert is a console app for converting bag files to various formats (currently supported: PNG, RAW, CSV, PLY, BIN). I the observed depth quality in point cloud is good, we can extract point clouds from the bag file. The extracted point clouds could be saved as .ply or .pcd. The code to extract a  10 second "file.bag" which was recorded on 30fps will produce 300 frames using following code:
+Method 1.  Extraction of Point clouds: Once we have a "BAG" file, you can use the  [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert). The rs-convert is a console app for converting bag files to various formats (currently supported: PNG, RAW, CSV, PLY, BIN). I the observed depth quality in point cloud is good, we can extract point clouds from the bag file. The extracted point clouds could be saved as .ply or .pcd. The code to extract a  10 second "file.bag" which was recorded on 30fps will produce 300 frames using following code:
 
 ```
 cd path_to_ Intel RealSense SDK 2.0/tools
@@ -71,11 +71,46 @@ folder
      .
     -n.pcd
 ``` 
-2. 
-3. 
-4. Extract RGB-Depth image sequence. This is supposed to be used when the depth of the scanned point clouds is of low quality. So we suggest you can scan few point clouds and visualise it first. if the quality is not acceptable, record a sequence by clicking the record button on sdk. This will record 
+Method 2. Extract RGB-Depth image sequence:  This is supposed to be used when the depth of the scanned point clouds is of low quality. So we suggest you can scan few point clouds and visualise it first. If the quality is not good, we can extract RGB and Depth images separately. One way to do this is to use [rs-convert] (https://github.com/IntelRealSense/librealsense/tree/master/tools/convert) and execute the code given below. For a 10 second "file.bag" which was recorded on 30fps will produce 300 RGB and 300 Depth frames individually.
 
-2. 
+
+For RGB:
+```
+cd path_to_ Intel RealSense SDK 2.0/tools
+.\rs-convert.exe -c path_of_output_folder -i file.bag
+```
+
+For Depth:
+```
+cd path_to_ Intel RealSense SDK 2.0/tools
+.\rs-convert.exe -d path_of_output_folder -i file.bag
+```
+
+Here the parameter "-c" informs rs-convert to extract RGB frames and parameter "-d" informs rs-convert to extract RGB frames. The dimensions of the RGB and Depth images might differ. if so, the next steps would be to bring the dimensions of the depth and RGB same without losing information. Next, please save the frames in following structure:  
+
+```
+Data
+    images
+        -0.jpg
+        -1.jpg
+        .
+        .
+        .
+        .
+        -n.jpg
+   Depth
+        -0.jpg
+        -1.jpg
+        .
+        .
+        .
+        .
+        -n.jpg     
+``` 
+
+Once this structure is setup, we next move to integrate these RGB and Depth frames together to then form point clouds. Each single pair of RGb and Depth with produce one point cloud. This point cloud would be of better quality then one directly extracted from "bag" file (method 1). For obtaining the point clouds, we use the rgbd_registration.py file.  
+
+
 
 ## Installation
 
