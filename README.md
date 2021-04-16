@@ -1,7 +1,7 @@
 
 # An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation
 
-This repository is implementation of the paper "An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation" which is a part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
+This repository is implementation of the paper "An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation" which is accepted at CVPR 2021 Workshop on Analysis and Modeling of Faces and Gestures (AMFG2021) and also part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
 
 
 The given pipeline can use scanned point clouds or pairs of RGB-Depth images using any depth camera (recomended: Intel RealSense D435i) and implement two different variants of Iterative Closest Point (ICP) based on availability of color information for the point clouds. The whole process is displayed in figure below:
@@ -195,6 +195,12 @@ Or it can also be viewed using either online version of [meshlab-online](http://
 
 If you use the code or use part of it, we would appreciate if you could support us by citing our work using:
 
+@inproceedings{vyas2021indoorgeonet,
+  title     = {Weakly Supervised Hybrid Learning for Depth and Pose Estimation},
+  author    = {Vyas, Kathan and  Jiang, Le and Liu, Shuangjun and Ostadabbas, Sarah},
+  booktitle = {CVPR Workshop on Analysis and Modeling of Faces and Gestures},
+  year = {2021}
+}
 
 
 ## License 
