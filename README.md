@@ -1,7 +1,7 @@
 
 # An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation
 
-This repository is implementation of the paper "An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation" which is accepted at the CVPR 2021 Workshop on Analysis and Modeling of Faces and Gestures (AMFG2021) and also part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
+This repository is implementation of the paper [An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation[(https://openaccess.thecvf.com/content/CVPR2021W/AMFG/papers/Vyas_An_Efficient_3D_Synthetic_Model_Generation_Pipeline_for_Human_Pose_CVPRW_2021_paper.pdf) which is presented at the CVPR 2021 Workshop on Analysis and Modeling of Faces and Gestures (AMFG2021) and also part of Masters thesis by [Kathan Vyas](vyas.k@northeastern.edu) and was developed at the [Augmented Cognition Lab](https://web.northeastern.edu/ostadabbas/). 
 
 
 The given pipeline can use scanned point clouds or pairs of RGB-Depth images using any depth camera (recomended: Intel RealSense D435i) and implement two different variants of Iterative Closest Point (ICP) based on availability of color information for the point clouds. The whole process is displayed in figure below:
@@ -195,11 +195,13 @@ Or it can also be viewed using either online version of [meshlab-online](http://
 
 If you use the code or use part of it, we would appreciate if you could support us by citing our work using:
 
-@inproceedings{vyas2021efficient,
-  title     = {An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation},
-  author    = {Vyas, Kathan and  Jiang, Le and Liu, Shuangjun and Ostadabbas, Sarah},
-  booktitle = {CVPR Workshop on Analysis and Modeling of Faces and Gestures},
-  year = {2021}
+@InProceedings{Vyas_2021_CVPR,
+    author    = {Vyas, Kathan and Jiang, Le and Liu, Shuangjun and Ostadabbas, Sarah},
+    title     = {An Efficient 3D Synthetic Model Generation Pipeline for Human Pose Data Augmentation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2021},
+    pages     = {1542-1552}
 }
 
 
