@@ -131,7 +131,7 @@ The execution of each code asks for following argument:
 
 1. Number of point clouds: This is the total number of point cloud you are using as input. this number as explained earlier can be anywhere between 2 to n.
 
-2. Input Folder (not asked in this version but will be put as an argument in later version): This is not asked as argument. you can change the directory for the input from each of the file.
+2. Input Folder (not asked in this version but will be put as an argument in later version): This is not asked as argument in color_ICP. you can change the directory for the input from each of the file in this segment: ![image](https://user-images.githubusercontent.com/79390102/127918547-b83041fa-c3b8-41a2-84fb-4ff0891c8c81.png).
 
 3. Output Folder (not asked in this version but will be put as an argument in later version): This is where the output registered point cloud will be stored. Present version stores a final registered point cloud in same directory as input directory.
 
