@@ -43,7 +43,7 @@ In our experiments while creating the pipeline, we used [Intel RealSense D435i](
 
 
 
-### Exraction-setup
+### Extraction-setup
 
 The subject that is being scanned is to be kept in front of camera. You can use a rotating table on which you can put the subject and rotate it. You can then use the RealSense SDK-viewer API which is as shown in figure here.
 
@@ -86,7 +86,7 @@ cd path_to_ Intel RealSense SDK 2.0/tools
 .\rs-convert.exe -d path_of_output_folder -i file.bag
 ```
 
-Here the parameter "-c" informs rs-convert to extract RGB frames and parameter "-d" informs rs-convert to extract RGB frames. The dimensions of the RGB and Depth images might differ. if so, the next steps would be to bring the dimensions of the depth and RGB same without losing information. Next, please save the frames in following structure:  
+Here the parameter "-c" informs rs-convert to extract RGB frames only and parameter "-d" informs rs-convert to extract depth frames only. The dimensions of the RGB and Depth images might differ. if so, the next steps would be to bring the dimensions of the depth and RGB same without losing information. Next, please save the frames in following structure:  
 
 ```
 Data
@@ -114,8 +114,8 @@ Once this structure is setup, we next move to integrate these RGB and Depth fram
 
 ## Installation
 
-The algorithm is purely working in python 3.6 or higher. The requirement of the algorithm needs some libraries which can be installed using the ''requirement.txt'' file. 
-Please make an enviornment using this requirement file and your are ready to go. If you have issues with numpy and open3D, please install numpy firls either using whl or source 
+The algorithm is purely working in python 3.6 or 3.7. The requirement of the algorithm needs some libraries which can be installed using the ''requirement.txt'' file. The versions of each package are controlled due to Open3D not being backwards compatible as of yet.
+Please make an environment in python 3.6 or 3.7 using this requirement file and your are ready to go. If you have issues with numpy and open3D, please install numpy firls either using whl or source 
 and then install open3D.
 
 ## Usage
