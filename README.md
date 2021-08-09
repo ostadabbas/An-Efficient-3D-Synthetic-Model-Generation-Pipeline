@@ -86,7 +86,16 @@ cd path_to_ Intel RealSense SDK 2.0/tools
 .\rs-convert.exe -d path_of_output_folder -i file.bag
 ```
 
-Here the parameter "-c" informs rs-convert to extract RGB frames only and parameter "-d" informs rs-convert to extract depth frames only. The dimensions of the RGB and Depth images might differ. if so, the next steps would be to bring the dimensions of the depth and RGB same without losing information. Next, please save the frames in following structure:  
+Here the parameter "-c" informs rs-convert to extract RGB frames only and parameter "-d" informs rs-convert to extract depth frames only. The dimensions of the RGB and Depth images might differ. if so, the next steps would be to bring the dimensions of the depth and RGB same without losing information. 
+
+For both RGB and depth:
+```
+cd path_to_ Intel RealSense SDK 2.0/tools
+.\rs-convert.exe -p path_of_output_folder -i file.bag
+```
+
+This will extract all color and depth frames as PNG, we can change them to JPG later.
+Next, please save the color and depth frames in following structure:  
 
 ```
 Data
